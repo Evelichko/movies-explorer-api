@@ -8,13 +8,6 @@
     "dev": "nodemon app.js",
     "lint": "npx eslint ."
   },
-  "keywords": [
-    "Yandex-Praktikum",
-    "Yandex",
-    "diploma-project",
-    "backend",
-    "movies"
-  ],
   "author": "Kate Velichko",
   "license": "ISC",
   "bugs": {

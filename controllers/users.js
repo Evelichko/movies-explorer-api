@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-const { NODE_ENV, SECRET_SIGNING_KEY } = require('../utils/config');
+const { NODE_ENV, JWT_SECRET } = require('../utils/config');
 const { PASSWORD_REGEX } = require('../utils/validation');
 const RESPONSE_MESSAGES = require('../utils/constants');
 
@@ -63,7 +63,7 @@ function loginUser(req, res, next) {
       if (_id) {
         const token = jwt.sign(
           { _id },
-          NODE_ENV === 'production' ? SECRET_SIGNING_KEY : 'secretKey',
+          NODE_ENV === 'production' ? JWT_SECRET : 'secretKey',
           { expiresIn: '7d' },
         );
 
